@@ -1,3 +1,9 @@
+#STM32CubeIDE
+.settings/
+Debug/
+Release/
+TouchGFX/build/
+
 # Prerequisites
 *.d
 
