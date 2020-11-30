@@ -13,7 +13,7 @@ void OSWrappers::signalRenderingDone()
     osMessageQueueReset(vsync_queue);
 }
 ```
-and in file *Core\Src\main.c* we must add *__weak* to void *TouchGFX_Task(void *argument)*
+and in file *Core\Src\main.c* we must add *__weak* to *void TouchGFX_Task(void *argument)**
 ```c
 /* USER CODE END Header_TouchGFX_Task */
 __weak void TouchGFX_Task(void *argument)
