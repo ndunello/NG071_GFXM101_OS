@@ -2,6 +2,7 @@
 .settings/
 Debug/
 Release/
+*.launch
 TouchGFX/build/
 
 # Prerequisites
