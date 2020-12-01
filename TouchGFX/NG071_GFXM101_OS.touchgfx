@@ -50,22 +50,11 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Wait",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerScreenEntered"
-            },
-            "Action": {
-              "Type": "ActionDelay",
-              "Duration": 1000
-            }
-          },
-          {
             "InteractionName": "GoTo_Screen2",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "Wait"
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 54
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -127,22 +116,11 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Wait",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerScreenEntered"
-            },
-            "Action": {
-              "Type": "ActionDelay",
-              "Duration": 1000
-            }
-          },
-          {
             "InteractionName": "GoTo_Screen1",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "Wait"
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 52
             },
             "Action": {
               "Type": "ActionGotoScreen",

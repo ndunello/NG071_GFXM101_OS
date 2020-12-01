@@ -5,8 +5,7 @@
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-Screen2ViewBase::Screen2ViewBase() :
-    waitCounter(0)
+Screen2ViewBase::Screen2ViewBase()
 {
 
     __background.setPosition(0, 0, 320, 240);
@@ -30,27 +29,14 @@ void Screen2ViewBase::setupScreen()
 
 }
 
-//Handles delays
-void Screen2ViewBase::handleTickEvent()
+//Handles when a key is pressed
+void Screen2ViewBase::handleKeyEvent(uint8_t key)
 {
-    if(waitCounter > 0)
+    if(52 == key)
     {
-        waitCounter--;
-        if(waitCounter == 0)
-        {
-            //GoTo_Screen1
-            //When Wait completed change screen to Screen1
-            //Go to Screen1 with no screen transition
-            application().gotoScreen1ScreenNoTransition();
-        }
+        //GoTo_Screen1
+        //When hardware button 52 clicked change screen to Screen1
+        //Go to Screen1 with no screen transition
+        application().gotoScreen1ScreenNoTransition();
     }
-}
-
-//Called when the screen is done with transition/load
-void Screen2ViewBase::afterTransition()
-{
-    //Wait
-    //When screen is entered delay
-    //Delay for 1000 ms (60 Ticks)
-    waitCounter = WAIT_DURATION;
 }

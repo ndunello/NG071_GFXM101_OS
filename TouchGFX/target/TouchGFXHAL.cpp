@@ -18,10 +18,13 @@
 
 /* USER CODE BEGIN TouchGFXHAL.cpp */
 #include <touchgfx/hal/OSWrappers.hpp>
+#include <MB1642BButtonController.hpp>
 #include "stm32g0xx.h"
 #include "MB1642BDisplayDriver.h"
 
 using namespace touchgfx;
+
+MB1642AButtonController bc;
 extern "C" volatile uint16_t TE;
 
 /* ******************************************************
@@ -52,6 +55,7 @@ void TouchGFXHAL::initialize()
 	MB1642BDisplayDriver_DisplayOn();
 
     TouchGFXGeneratedHAL::initialize();
+    setButtonController(&bc);
 
 //    lockDMAToFrontPorch(false);
     /* Wait for first VSync from display */

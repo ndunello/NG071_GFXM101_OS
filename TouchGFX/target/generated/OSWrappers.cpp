@@ -93,15 +93,6 @@ void OSWrappers::signalVSync()
 }
 
 /*
-* Signal that the rendering of the frame has completed. Used by
-* some systems to avoid using any previous vsync.
-*/
-void OSWrappers::signalRenderingDone()
-{
-    osMessageQueueReset(vsync_queue);
-}
-
-/*
  * This function blocks until a VSYNC occurs.
  *
  * Note This function must first clear the mutex/queue and then wait for the next one to
@@ -115,6 +106,15 @@ void OSWrappers::waitForVSync()
 
     // Then, wait for next VSYNC to occur.
     osMessageQueueGet(vsync_queue, &dummyGet, 0, osWaitForever);
+}
+
+/*
+* Signal that the rendering of the frame has completed. Used by
+* some systems to avoid using any previous vsync.
+*/
+void OSWrappers::signalRenderingDone()
+{
+    osMessageQueueReset(vsync_queue);
 }
 
 /*

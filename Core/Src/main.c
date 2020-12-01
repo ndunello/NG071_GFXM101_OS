@@ -411,6 +411,14 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, DISPLAY_DCX_Pin|DISPLAY_CSX_Pin, GPIO_PIN_SET);
 
+  /*Configure GPIO pins : BUTTON_RIGHT_Pin BUTTON_UP_Pin BUTTON_USER_Pin BUTTON_CENTER_Pin
+                           BUTTON_LEFT_Pin BUTTON_DOWN_Pin */
+  GPIO_InitStruct.Pin = BUTTON_RIGHT_Pin|BUTTON_UP_Pin|BUTTON_USER_Pin|BUTTON_CENTER_Pin
+                          |BUTTON_LEFT_Pin|BUTTON_DOWN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
   /*Configure GPIO pin : TE_Pin */
   GPIO_InitStruct.Pin = TE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
